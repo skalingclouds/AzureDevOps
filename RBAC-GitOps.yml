@@ -11,5 +11,5 @@ steps:
     ScriptType: 'FilePath'
     ScriptPath: '$(Build.SourcesDirectory)\New-RBACRoleFromSource.ps1'
     ScriptArguments: '-ImportCsv $(Build.SourcesDirectory)\users.csv'
-    errorActionPreference: 'silentlyContinue'
+    FailOnStandardError: true
     azurePowerShellVersion: 'LatestVersion'
