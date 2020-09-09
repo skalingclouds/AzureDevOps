@@ -1,0 +1,4 @@
+Username,RoleDefinitionName,ResourceGroupName
+skalinatoradmin@skalingclouds.io,Virtual Machine Contributor,sc-vmsandbox-01
+skalinator@skalingclouds.io,Virtual Machine Contributor,sc-vmsandbox-01
+test@skalingclouds.io,Virtual Machine Contributor,sc-vmsandbox-01
