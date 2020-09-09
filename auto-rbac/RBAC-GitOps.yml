@@ -9,7 +9,7 @@ steps:
   inputs:
     azureSubscription: 'Visual Studio Enterprise Subscription(1)(7988e1db-d743-443a-80b0-2da3f11a3631)'
     ScriptType: 'FilePath'
-    ScriptPath: '$(Build.SourcesDirectory)\New-RBACRoleFromSource.ps1'
-    ScriptArguments: '-ImportCsv $(Build.SourcesDirectory)\users.csv'
+    ScriptPath: '$(Build.SourcesDirectory)\auto-rbac\New-RBACRoleFromSource.ps1'
+    ScriptArguments: '-ImportCsv $(Build.SourcesDirectory)\auto-rbac\users.csv'
     FailOnStandardError: true
     azurePowerShellVersion: 'LatestVersion'
