@@ -1,19 +1,15 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - master
-
 pool:
-  vmImage: 'ubuntu-latest'
-
+  name: "Hosted Windows 2019 with VS2019"
+ 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: AzurePowerShell@5
+  displayName: 'RBAC User Assignments'
+  inputs:
+    azureSubscription: 'Internal Subscription 1(d7cc508e-d2cc-46d7-8185-5b4cb24827bb)'
+    ScriptType: 'FilePath'
+    ScriptPath: '$(Build.SourcesDirectory)\New-RBACRoleFromSource.ps1'
+    ScriptArguments: '-ImportCsv $(Build.SourcesDirectory)\users.csv'
+    errorActionPreference: 'silentlyContinue'
+    azurePowerShellVersion: 'LatestVersion'
